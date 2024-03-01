@@ -1,0 +1,69 @@
+// 1:
+function verificarMaiorIdade(idade) {
+    return idade < 18 ? 'Menor de idade' : 'Maior de idade';
+}
+let idade = 19;
+console.log(verificarMaiorIdade(idade));
+
+// 2:
+function orderArray() {
+
+    let arr = [1, 2, 3, 6, 7, 9];
+    arr.unshift(0);
+    arr.splice(4, 0, 4, 5);
+    arr.splice(8, 0, 8);
+   
+    return arr
+}
+console.log(orderArray());
+
+// 3:
+
+function meusDados() {
+    let pessoa = {
+        nome: 'jhon doe',
+        idade: '30',
+        cidade: 'New York'
+    }
+    pessoa.nome = 'Gran Torino';
+    pessoa.cidade = 'Londres';
+
+    delete pessoa.idade;
+   
+    return pessoa;
+}
+console.log(meusDados());
+
+4-
+function manipulaArray() {
+    let animais = ['cacohrro', 'gato', 'abelha', 'rato', 'leão',  'galinha'];
+
+    function ordemAlfabetica() {
+        return animais.slice().sort();
+    }
+
+    function primeiro() {
+        return animais[0];
+    }
+
+    function ultimo() {
+        return animais[animais.length - 1];
+    }
+
+    function tamanhoDaLista() {
+        return animais.length;
+    }
+
+    return {
+        ordemAlfabetica,
+        primeiro,
+        ultimo,
+        tamanhoDaLista
+    };
+}
+
+const manipulador = manipulaArray();
+console.log("Ordem alfabética:", manipulador.ordemAlfabetica());
+console.log("Primeiro animal:", manipulador.primeiro());
+console.log("Último animal:", manipulador.ultimo());
+console.log("Tamanho da lista:", manipulador.tamanhoDaLista());
